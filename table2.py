@@ -51,9 +51,4 @@ if __name__ == "__main__":
     table2 = pd.concat([table_totals,table], axis=1)
     table2.index.name = 'Disorder'
     table2.to_csv(output_dir + 'table2.csv')
-
-    original = pd.read_csv(output_dir+'table2_original.csv')
-    print(table2)
-    print('====================')
-    print(original)
     
