@@ -59,6 +59,7 @@ def plot_heatmap(output_dir , df_corr, row_names = None, output_file_name = 'sim
     plt.ylabel(ylabel, fontsize=label_size)
     colors = ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b',
               'r', 'r', 'r', 'r', 'r', 'r','r',
+              'purple',
               'k','k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', ]
     g.axes.set_yticklabels(row_names)
     for xtick, color in zip(g.axes.get_yticklabels(), colors):
@@ -69,47 +70,6 @@ def plot_heatmap(output_dir , df_corr, row_names = None, output_file_name = 'sim
     plt.tight_layout(tight_layout)
     plt.savefig(output_dir + output_file_name+ '.eps', format='eps', dpi=600)
     return
-
-
-def plot_cluster_map(output_dir = './' , dataframe = pd.DataFrame(),output_file_name = 'figure2', mask = None, x_rotation=45, xlabel = None , ylabel = None, label_size = 10, tight_layout=1.8, font_scale=1):
-    plt.clf()
-    sns.set(font_scale=font_scale)
-    cg = sns.clustermap(dataframe, method='ward', metric='euclidean', cmap="RdBu_r", vmin=-1., vmax=1.0,
-                        cbar_kws={"ticks": [-1., -0.5, 0.0, 0.5, 1.0]},
-                        mask = mask)
-    plt.setp(cg.ax_heatmap.yaxis.get_majorticklabels(), rotation=0)
-    plt.setp(cg.ax_heatmap.xaxis.get_majorticklabels(), rotation=x_rotation)
-    ax = cg.ax_heatmap
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    colors = ['b', 'b', 'b', 'b', 'b', 'b',
-              'r', 'r', 'r', 'r', 'r','r',
-              'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', ]
-    # find new position of ytick labels
-    d = {}
-    for i, color in enumerate(colors):
-        d[i]=color
-    new_index = list(cg.dendrogram_row.reordered_ind)
-    new_colors = []
-    for i, index in enumerate(new_index):
-        color = d.get(index)
-        new_colors.append(color)
-    # set color to yticklabels
-    for xtick, color in zip(cg.ax_heatmap.yaxis.get_majorticklabels(), new_colors):
-        xtick.set_color(color)
-    plt.tight_layout(tight_layout)
-    cg.savefig(output_dir + output_file_name+ '.eps', format='eps', dpi=600)
-    return
-
-def hardlim(x):
-    if x == 0:
-        y = 0
-    elif x<0:
-        y = -1
-    elif x > 0:
-        y = 1
-    return y
-
 
 if __name__ == "__main__":
     input_dir = 'data/inputs/'
@@ -130,23 +90,8 @@ if __name__ == "__main__":
                  value_range=[-1,1],
                  xlabel = 'Psychiatric disorders', 
                  ylabel='Acoustic features',
-                 font_scale=6,
+                 font_scale=7,
                  x_rotation=45 , 
                  label_size = 8, 
                  tight_layout = 0.1)
 
-    # Plot cluster heatmap from figure 3
-    matrix_scaled_hardlim  = matrix_scaled.applymap(hardlim) # Apply hardlim to avoid effects
-    # Remove disorders with few studies
-    matrix_scaled_hardlim_big_disorders = matrix_scaled_hardlim.drop(['OCD', 'Bulimia', 'Anorexia', 'PTSD'], axis=1)
-    # Remove features only present in dropped disorders
-    matrix_scaled_hardlim_big_disorders = matrix_scaled_hardlim_big_disorders.drop(['Pause variability', 'Maximum phonation time', 'F2 variability',
-                                                                                'F1 variability', 'ADR', 'FDR', 'Tremor', 'HNR', ], axis=0)
-    plot_cluster_map(output_dir = output_dir, dataframe = matrix_scaled_hardlim_big_disorders, 
-                    output_file_name = 'disorders_clustermap_hardlim_big_disorders', 
-                    mask= None, 
-                    x_rotation=45, 
-                    xlabel = 'Similarity between psychiatric disorders given acoustic features', 
-                    ylabel = 'Empirical ontology of acoustic features given psychiatric traits', 
-                    label_size = 12, 
-                    tight_layout = 1.8)
