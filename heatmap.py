@@ -92,7 +92,15 @@ if __name__ == "__main__":
     matrix_scaled = np.reshape(matrix_scaled, matrix.shape)
     matrix_scaled = pd.DataFrame(matrix_scaled, columns=matrix.columns, index=matrix.index)
 
-    # Plot heatmap from figure 2
+    matrix_scaled_abs = matrix_scaled.abs()
+    nlargest_features = {}
+    for disorder in matrix_scaled_abs.columns:
+        features = list(matrix_scaled_abs.nlargest(3,disorder).index)
+        nlargest_features[disorder] = features
+
+    print('3 highest absolute scores per disorder', nlargest_features)
+
+        # Plot heatmap from figure 2
     output_file_name = 'features_by_disorders_maxabs_scaler'
     plot_heatmap(path= path, output_dir = output_dir, df_corr = matrix_scaled, row_names = matrix.index,
                  output_file_name = output_file_name, with_corr_values=False,
