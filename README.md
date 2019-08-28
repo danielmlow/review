@@ -30,7 +30,7 @@ Input files are in `./data/inputs/`
 
 `overfitting.py` creates figure in Box 1.
 
-`table2.py` takes the dataframe `speech_psychiatry.xlsx`, the database of reviewed articles (maintained here: [https://tinyurl.com/y59hz5le](https://tinyurl.com/y59hz5le)), and outputs Table 2.
+`table2.py` takes the dataframe `speech_psychiatry.xlsx`, the database of reviewed articles (maintained here: [https://tinyurl.com/y6ojfq56](https://tinyurl.com/y6ojfq56)), and outputs Table 2.
 
 `heatmap.py` takes the dataframe `speech_psychiatry_figure2.xlsx` and outputs Figure 2.
 
