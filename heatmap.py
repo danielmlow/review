@@ -6,6 +6,8 @@ license: Apache 2.0
 
 '''
 
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,8 +15,10 @@ import seaborn as sns
 from sklearn.preprocessing import maxabs_scale
 
 
+
+
 def preprocess_table(path = None):
-    df = pd.read_excel(path, sheet_name='figure2',header=1)
+    df = pd.read_excel(path, sheet_name='heatmap',header=1)
     df = df.replace(np.nan, 0, regex=True)
     matrix = []
     for row in df.iloc[:,2:].values:
@@ -52,13 +56,13 @@ def plot_heatmap(path = None, output_dir = None , df_corr = None, row_names = No
     sns.set(font_scale=font_scale)
 
     # Mask
-    df = pd.read_excel(path, sheet_name='figure2', header=1).iloc[:,2:]
+    df = pd.read_excel(path, sheet_name='heatmap', header=1).iloc[:,2:]
     df.index = df_corr.index
     mask = df.isnull()
 
     # Plot
-    g = sns.heatmap(df_corr,mask=mask, cmap="RdBu_r", vmin = vmin, vmax=vmax , cbar_kws={"ticks":ticks,"shrink": 0.5 }, annot=with_corr_values, xticklabels=True, yticklabels=True, )
-    g.set_facecolor('xkcd:white')
+    g = sns.heatmap(df_corr, mask=mask, cmap="RdBu_r", vmin = vmin, vmax=vmax , cbar_kws={"ticks":ticks,"shrink": 0.5 }, annot=with_corr_values, xticklabels=True, yticklabels=True, )
+    g.set_facecolor('xkcd:silver')
     g.figure.axes[-1].yaxis.label.set_size(label_size)
     # plt.tight_layout(tight_layout)
     plt.yticks(rotation=0, fontsize=font_scale)
@@ -76,13 +80,14 @@ def plot_heatmap(path = None, output_dir = None , df_corr = None, row_names = No
     # here set the labelsize by 20
     cbar.ax.tick_params(labelsize=label_size)
     plt.tight_layout(tight_layout)
-    plt.savefig(output_dir + output_file_name+ '.eps', format='eps', dpi=600)
+    plt.savefig(output_dir + output_file_name+ '.'+format, format=format, dpi=600)
     return
 
 if __name__ == "__main__":
+    format = 'eps'
     input_dir = 'data/inputs/'
     output_dir = 'data/outputs/'
-    input_file = 'speech_psychiatry_figure2.xlsx'
+    input_file = 'speech_psychiatry_heatmap.xlsx'
     path = input_dir + input_file
     # Clean dataframe
     matrix = preprocess_table(path = path)

@@ -28,9 +28,9 @@ python3 heatmap.py
 
 Input files are in `./data/inputs/`
 
-`overfitting.py` creates figure in Box 1.
+`overfitting.py` creates figure within Figure 1.
 
 `table2.py` takes the dataframe `speech_psychiatry.xlsx`, the database of reviewed articles (maintained here: [https://tinyurl.com/y59hz5le](https://tinyurl.com/y59hz5le)), and outputs Table 2.
 
-`heatmap.py` takes the dataframe `speech_psychiatry_figure2.xlsx` and outputs Figure 2.
+`heatmap.py` takes the dataframe `speech_psychiatry_heatmap.xlsx` and outputs Figure 3.
 

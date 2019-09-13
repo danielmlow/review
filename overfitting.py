@@ -6,9 +6,6 @@ license: Apache 2.0
 
 '''
 
-'''
-Plot figure from Box 1
-'''
 #
 import numpy as np
 import numpy.polynomial.polynomial as poly
@@ -19,6 +16,7 @@ seed(1)
 
 
 if __name__ == "__main__":
+    format = 'eps'
     output_dir = 'data/outputs/'
     plt.clf()
     plt.style.use('seaborn-ticks')
@@ -49,5 +47,5 @@ if __name__ == "__main__":
         left=False,
         right=False,
         labelleft=False) # labels along the bottom edge are off
-    plt.savefig(output_dir+'box1.eps', format='eps', dpi=600)
+    plt.savefig(output_dir+'box1.'+format, format=format, dpi=600)
 
