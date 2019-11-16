@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
 	# Plot heatmap
 
-	output_file_name = 'features_by_disorders_maxabs_scaler'
+	output_file_name = 'features_by_disorders'
 
 	max_abs_value = np.max(np.max(np.abs(matrix)))
 
