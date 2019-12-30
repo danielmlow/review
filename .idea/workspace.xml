@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="414fa486-561c-46ac-afcf-5b6239c3a527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/danielmlow.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/review.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heatmap_dynamic_cell_size.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/outputs/box1.eps" beforeDir="false" afterPath="$PROJECT_DIR$/data/outputs/box1.eps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/outputs/box1_submitted.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/outputs/features_by_disorders.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/outputs/features_by_disorders_maxabs_scaler.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/outputs/features_by_disorders_maxabs_scaler_original.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/outputs/features_by_disorders_mean.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/heatmap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/overfitting.py" beforeDir="false" afterPath="$PROJECT_DIR$/overfitting.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="255">
-                <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <first_editor relative-caret-position="265">
+                <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -231,8 +215,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="255">
-            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <first_editor relative-caret-position="265">
+            <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
