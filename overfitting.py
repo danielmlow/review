@@ -36,8 +36,8 @@ if __name__ == "__main__":
     plt.plot(x_new, ffit, '-', c='darkorange')
     plt.plot(x_new1, ffit1, '-', c='k')
     plt.plot(x,y,'.', c='dodgerblue', markersize=14, alpha=None)
-    plt.xlabel('Speech inputs',fontsize=15)
-    plt.ylabel('Disorder severity',fontsize=15)
+    plt.xlabel('Speech inputs',fontsize=18)
+    plt.ylabel('Disorder severity',fontsize=18)
     plt.tick_params(
         axis='both',
         which='both',      # both major and minor ticks are affected
@@ -47,5 +47,5 @@ if __name__ == "__main__":
         left=False,
         right=False,
         labelleft=False) # labels along the bottom edge are off
-    plt.savefig(output_dir+'box1.'+format, format=format, dpi=600)
+    plt.savefig(output_dir+'box1.'+format, format=format, dpi=1000)
 

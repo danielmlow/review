@@ -23,7 +23,7 @@ python3 overfitting.py
 
 python3 table2.py
 
-python3 heatmap.py
+python3 heatmap_dynamic_cell_size.py
 ```
 
 Input files are in `./data/inputs/`
@@ -32,5 +32,6 @@ Input files are in `./data/inputs/`
 
 `table2.py` takes the dataframe `speech_psychiatry.xlsx`, the database of reviewed articles (maintained here: [https://tinyurl.com/y6ojfq56](https://tinyurl.com/y6ojfq56)), and outputs Table 2.
 
-`heatmap.py` takes the dataframe `speech_psychiatry_heatmap.xlsx` and outputs Figure 3.
+`heatmap_dynamic_cell_size.py` takes the dataframe `speech_psychiatry_heatmap.xlsx` and outputs Figure 3.
+
 
