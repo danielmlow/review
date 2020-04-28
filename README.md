@@ -2,13 +2,11 @@
 Plots figures for "Automated Assessment of Psychiatric Disorders Using Speech: A Systematic Review"
 
 \
-**Figure 1** available in pdf format here: `./data/inputs/figure1_ml.pdf`
-
-**Figure 4** available in pdf format here: `./data/inputs/figure4_glossary.pdf`
+**Figure 1** and **Figure 4** available in pdf format here along with all other figures in jpeg: `./data/published_figures/`
 
 
 \
-For other figures:
+To reproduce figures and tables:
 
 ### Install miniconda 
 https://docs.conda.io/en/latest/miniconda.html
